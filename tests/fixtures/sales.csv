@@ -1,0 +1,13 @@
+month,sales,returns,active
+January,15200,320,true
+February,18400,410,true
+March,21000,380,true
+April,19500,290,true
+May,22800,450,true
+June,24100,510,true
+July,20300,370,false
+August,19800,340,true
+September,23500,420,true
+October,25000,490,true
+November,27300,530,true
+December,31200,610,true
