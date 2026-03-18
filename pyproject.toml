@@ -1,0 +1,64 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "chart_genie"
+version = "0.1.0"
+description = "Transform natural language descriptions and raw data into interactive, embeddable HTML charts."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+    { name = "Chart Genie Contributors" }
+]
+keywords = ["charts", "visualization", "cli", "openai", "llm", "chartjs"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Visualization",
+    "Topic :: Utilities",
+]
+dependencies = [
+    "openai>=1.0.0",
+    "jinja2>=3.1.0",
+    "rich>=13.0.0",
+    "httpx>=0.27.0",
+]
+
+[project.scripts]
+chart-genie = "chart_genie.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/example/chart_genie"
+Repository = "https://github.com/example/chart_genie"
+"Bug Tracker" = "https://github.com/example/chart_genie/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["chart_genie*"]
+
+[tool.setuptools.package-data]
+chart_genie = ["templates/*.j2"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --tb=short"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
+ignore = ["E501"]
